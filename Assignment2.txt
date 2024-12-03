@@ -1,0 +1,9 @@
+Assignment
+====================
+
+1 what is an Ingress object and how is it helpful in exposing an application
+  also create an ingress definition file to link apache and tomcat on it
+
+2 what are the different types of service objects in Kubernetes.
+
+3 Explain the difference between ReplicationController and ReplicaSet.

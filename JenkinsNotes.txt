@@ -1,0 +1,97 @@
+Setup of Jenkins for CI-CD
+================================
+1 Create 3 Ubuntu servers on the AWS cloud and name them as JenkinsServer,QAServer and ProdServer
+
+2 Connect to Jenkinsserver using gitbash
+
+3 Update the apt repository
+  sudo apt-get update
+
+4 Install java
+  sudo apt-get install -y openjdk-17-jdk
+
+5 Install git and maven
+  sudo apt-get install -y git maven
+
+6 Download Jenkins.war
+  wget https://get.jenkins.io/war-stable/2.462.3/jenkins.war
+
+7 To start jenkins
+  java -jar jenkins.war
+
+8 To acess jenkins from browser
+  public_ip_of_jenkinsserver:8080
+
+9 Unlock jenkins by entering the password
+
+10 click on Install suggested plugin
+
+11 Create First admin user
+=========================================================
+Setup of tomcat n QA and ProdServer
+=========================================
+1 Connect to QAserver aws instance using git bash
+
+2 Update the apt repo
+  sudo apt-get update
+
+3 Install tomcat10
+  sudo apt-get install -y tomcat10
+
+4 Install tomcat10-admin
+  sudo apt-get install -y tomcat10-admin
+
+5 Edit the tomcat-users.xml file
+  cd /etc/tomcat10
+  sudo vim tomcat-users.xml
+  Delete the entire data and replace with the below data
+  
+  <tomcat-users>
+     <user username="intelliqit" password="intelliqit" roles="manager-script"/>
+  </tomcat-users>
+
+6 Restart tomcat
+  sudo service tomcat10 restart
+  
+
+
+
+  Repeat the above 6 steps on the Prodserver
+=========================================================================
+1 To create a new file or open an existing file
+  vim filename
+
+2 To edit the file or to add some content to the file we go into insert mode
+  i
+
+3 To save the file and come out of the file
+  Esc :wq Enter
+
+4 To come out of the file without saving
+  Esc :q! Enter
+==================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
